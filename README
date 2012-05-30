@@ -1,0 +1,14 @@
+This is a litte fun project to let bots play rock, paper, scissors versus each other.
+
+Write your own bot by inheriting from Bot and implementing the methods choose() and learn(choice, opponents_choice). You can provide a name for your bot by optionally implementing name. See below. Put your bot into the directoy bots. You can start a contest with ruby contest.rb.
+
+All bots are paired in a fight against each other and against itself. Each fight compares the two bots' choices 1000 times. A new instance of each bot is created for each fight. The results of each fight and the overall performance of each bot is displayed.
+
+choose should return an entry of Bot::CHOICES.
+learn(choise, opponents_choise) will be called after each contest, which will give you the oportunity to second guess the other bot's algorithm ;)
+
+You can use the method judge(choice1, choice2) to determine the winner of the result. 0 is returned on a draw, 1 if the first choice is the winner, 2 if the second choice is the winner.
+
+Feel free to participate. Fork, write your own kickass bot and feel free to send a pull request.
+
+Made by me and coding god nilclass.
