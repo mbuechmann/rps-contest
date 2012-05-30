@@ -8,15 +8,15 @@ class Contest
 
   include Judge
 
-  def initialize
-    load_bots
+  def initialize(*names)
+    load_bots(*names)
     @results = []
     @win_counts = Hash.new(0)
   end
 
   def start
     @bots.each_with_index do |bot, index|
-      @bots.slice(index..(-1)).each do |opponent|
+      @bots.slice((index + 1)..(-1)).each do |opponent|
         fight! bot, opponent
       end
     end
@@ -25,10 +25,14 @@ class Contest
 
   private
 
-  def load_bots
+  def load_bots(*names)
     @bots = Dir['./bots/*.rb'].map do |path|
       require path
       File.basename(path).sub('.rb', '').classify.constantize
+    end
+
+    if names.any?
+      @bots.select! { |bot| names.include?(bot.name) }
     end
   end
 
@@ -65,6 +69,4 @@ class Contest
 
 end
 
-contest = Contest.new
-contest.start
 
