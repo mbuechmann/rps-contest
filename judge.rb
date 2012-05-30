@@ -6,7 +6,7 @@ module Judge
     'Rock' => 'Scissors',
     'Paper' => 'Rock',
     'Scissors' => 'Paper'
-  }
+  }.freeze
 
   def judge choice1, choice2
     CHOICE_MAP[choice1] == choice2 ? 1 : (choice1 == choice2 ? 0 : 2)
