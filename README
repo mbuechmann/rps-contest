@@ -9,6 +9,8 @@ learn(choise, opponents_choise) will be called after each contest, which will gi
 
 You can use the method judge(choice1, choice2) to determine the winner of the result. 0 is returned on a draw, 1 if the first choice is the winner, 2 if the second choice is the winner.
 
+You can use the helper methods what_beats(choice) and what_gets_beaten_by(choice).
+
 Feel free to participate. Fork, write your own kickass bot and feel free to send a pull request.
 
 Made by me and coding god nilclass.
