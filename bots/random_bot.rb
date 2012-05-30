@@ -1,7 +1,7 @@
 class RandomBot < Bot
 
   def name
-    'Totally Unepredictable Bot'
+    'Totally Unpredictable Bot'
   end
 
   def choose
